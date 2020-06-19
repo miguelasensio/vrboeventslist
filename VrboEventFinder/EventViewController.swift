@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class EventViewController: UIViewController {
 
 	@IBOutlet weak var detailDescriptionLabel: UILabel!
 

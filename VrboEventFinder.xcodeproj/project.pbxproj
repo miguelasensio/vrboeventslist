@@ -3,18 +3,31 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		ACB89D33249D0F1C00052ABE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB89D32249D0F1C00052ABE /* AppDelegate.swift */; };
 		ACB89D35249D0F1C00052ABE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB89D34249D0F1C00052ABE /* SceneDelegate.swift */; };
-		ACB89D37249D0F1C00052ABE /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB89D36249D0F1C00052ABE /* MasterViewController.swift */; };
-		ACB89D39249D0F1C00052ABE /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB89D38249D0F1C00052ABE /* DetailViewController.swift */; };
+		ACB89D37249D0F1C00052ABE /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB89D36249D0F1C00052ABE /* EventsViewController.swift */; };
+		ACB89D39249D0F1C00052ABE /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB89D38249D0F1C00052ABE /* EventViewController.swift */; };
 		ACB89D3C249D0F1D00052ABE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACB89D3A249D0F1D00052ABE /* Main.storyboard */; };
 		ACB89D3E249D0F1D00052ABE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACB89D3D249D0F1D00052ABE /* Assets.xcassets */; };
 		ACB89D41249D0F1E00052ABE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACB89D3F249D0F1E00052ABE /* LaunchScreen.storyboard */; };
 		ACB89D4C249D0F1E00052ABE /* VrboEventFinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB89D4B249D0F1E00052ABE /* VrboEventFinderTests.swift */; };
+		ACB89D59249D10DD00052ABE /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB89D58249D10DD00052ABE /* Event.swift */; };
+		ACB89D5B249D110500052ABE /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB89D5A249D110500052ABE /* Events.swift */; };
+		ACB89D5F249D119400052ABE /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB89D5E249D119400052ABE /* Venue.swift */; };
+		ACB89D61249D132B00052ABE /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB89D60249D132B00052ABE /* App.swift */; };
+		ACB89D64249D13DC00052ABE /* EventsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB89D63249D13DC00052ABE /* EventsService.swift */; };
+		ACB89D67249D142300052ABE /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = ACB89D66249D142300052ABE /* Alamofire */; };
+		ACB89D69249D161200052ABE /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB89D68249D161200052ABE /* Services.swift */; };
+		ACB89D6C249D1D1F00052ABE /* Date+Vrbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB89D6B249D1D1F00052ABE /* Date+Vrbo.swift */; };
+		ACB89D70249D2DBB00052ABE /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB89D6E249D2DBB00052ABE /* EventTableViewCell.swift */; };
+		ACB89D71249D2DBB00052ABE /* EventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACB89D6F249D2DBB00052ABE /* EventTableViewCell.xib */; };
+		ACB89D74249D2FD800052ABE /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB89D73249D2FD800052ABE /* EventViewModel.swift */; };
+		ACB89D76249D536300052ABE /* Performer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB89D75249D536300052ABE /* Performer.swift */; };
+		ACB89D78249D5A1700052ABE /* UIImage+Vrbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB89D77249D5A1700052ABE /* UIImage+Vrbo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,8 +44,8 @@
 		ACB89D2F249D0F1C00052ABE /* VrboEventFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VrboEventFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACB89D32249D0F1C00052ABE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACB89D34249D0F1C00052ABE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		ACB89D36249D0F1C00052ABE /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		ACB89D38249D0F1C00052ABE /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		ACB89D36249D0F1C00052ABE /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
+		ACB89D38249D0F1C00052ABE /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		ACB89D3B249D0F1D00052ABE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ACB89D3D249D0F1D00052ABE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ACB89D40249D0F1E00052ABE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -40,6 +53,18 @@
 		ACB89D47249D0F1E00052ABE /* VrboEventFinderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VrboEventFinderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACB89D4B249D0F1E00052ABE /* VrboEventFinderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VrboEventFinderTests.swift; sourceTree = "<group>"; };
 		ACB89D4D249D0F1E00052ABE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ACB89D58249D10DD00052ABE /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		ACB89D5A249D110500052ABE /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
+		ACB89D5E249D119400052ABE /* Venue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
+		ACB89D60249D132B00052ABE /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		ACB89D63249D13DC00052ABE /* EventsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsService.swift; sourceTree = "<group>"; };
+		ACB89D68249D161200052ABE /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
+		ACB89D6B249D1D1F00052ABE /* Date+Vrbo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Vrbo.swift"; sourceTree = "<group>"; };
+		ACB89D6E249D2DBB00052ABE /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
+		ACB89D6F249D2DBB00052ABE /* EventTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventTableViewCell.xib; sourceTree = "<group>"; };
+		ACB89D73249D2FD800052ABE /* EventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
+		ACB89D75249D536300052ABE /* Performer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Performer.swift; sourceTree = "<group>"; };
+		ACB89D77249D5A1700052ABE /* UIImage+Vrbo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Vrbo.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACB89D67249D142300052ABE /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,13 +107,14 @@
 		ACB89D31249D0F1C00052ABE /* VrboEventFinder */ = {
 			isa = PBXGroup;
 			children = (
-				ACB89D32249D0F1C00052ABE /* AppDelegate.swift */,
-				ACB89D34249D0F1C00052ABE /* SceneDelegate.swift */,
-				ACB89D36249D0F1C00052ABE /* MasterViewController.swift */,
-				ACB89D38249D0F1C00052ABE /* DetailViewController.swift */,
-				ACB89D3A249D0F1D00052ABE /* Main.storyboard */,
-				ACB89D3D249D0F1D00052ABE /* Assets.xcassets */,
-				ACB89D3F249D0F1E00052ABE /* LaunchScreen.storyboard */,
+				ACB89D72249D2FBB00052ABE /* ViewModel */,
+				ACB89D6D249D2D9E00052ABE /* Views */,
+				ACB89D6A249D1D0A00052ABE /* Extensions */,
+				ACB89D62249D13C100052ABE /* Services */,
+				ACB89D57249D10CE00052ABE /* Model */,
+				ACB89D56249D108B00052ABE /* Main */,
+				ACB89D36249D0F1C00052ABE /* EventsViewController.swift */,
+				ACB89D38249D0F1C00052ABE /* EventViewController.swift */,
 				ACB89D42249D0F1E00052ABE /* Info.plist */,
 			);
 			path = VrboEventFinder;
@@ -100,6 +127,65 @@
 				ACB89D4D249D0F1E00052ABE /* Info.plist */,
 			);
 			path = VrboEventFinderTests;
+			sourceTree = "<group>";
+		};
+		ACB89D56249D108B00052ABE /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				ACB89D32249D0F1C00052ABE /* AppDelegate.swift */,
+				ACB89D34249D0F1C00052ABE /* SceneDelegate.swift */,
+				ACB89D3A249D0F1D00052ABE /* Main.storyboard */,
+				ACB89D3D249D0F1D00052ABE /* Assets.xcassets */,
+				ACB89D3F249D0F1E00052ABE /* LaunchScreen.storyboard */,
+				ACB89D60249D132B00052ABE /* App.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		ACB89D57249D10CE00052ABE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ACB89D58249D10DD00052ABE /* Event.swift */,
+				ACB89D5A249D110500052ABE /* Events.swift */,
+				ACB89D5E249D119400052ABE /* Venue.swift */,
+				ACB89D75249D536300052ABE /* Performer.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		ACB89D62249D13C100052ABE /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				ACB89D63249D13DC00052ABE /* EventsService.swift */,
+				ACB89D68249D161200052ABE /* Services.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		ACB89D6A249D1D0A00052ABE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				ACB89D6B249D1D1F00052ABE /* Date+Vrbo.swift */,
+				ACB89D77249D5A1700052ABE /* UIImage+Vrbo.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		ACB89D6D249D2D9E00052ABE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				ACB89D6E249D2DBB00052ABE /* EventTableViewCell.swift */,
+				ACB89D6F249D2DBB00052ABE /* EventTableViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		ACB89D72249D2FBB00052ABE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				ACB89D73249D2FD800052ABE /* EventViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -118,6 +204,9 @@
 			dependencies = (
 			);
 			name = VrboEventFinder;
+			packageProductDependencies = (
+				ACB89D66249D142300052ABE /* Alamofire */,
+			);
 			productName = VrboEventFinder;
 			productReference = ACB89D2F249D0F1C00052ABE /* VrboEventFinder.app */;
 			productType = "com.apple.product-type.application";
@@ -168,6 +257,9 @@
 				Base,
 			);
 			mainGroup = ACB89D26249D0F1C00052ABE;
+			packageReferences = (
+				ACB89D65249D142300052ABE /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = ACB89D30249D0F1C00052ABE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -183,6 +275,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACB89D71249D2DBB00052ABE /* EventTableViewCell.xib in Resources */,
 				ACB89D41249D0F1E00052ABE /* LaunchScreen.storyboard in Resources */,
 				ACB89D3E249D0F1D00052ABE /* Assets.xcassets in Resources */,
 				ACB89D3C249D0F1D00052ABE /* Main.storyboard in Resources */,
@@ -203,10 +296,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACB89D61249D132B00052ABE /* App.swift in Sources */,
+				ACB89D5B249D110500052ABE /* Events.swift in Sources */,
+				ACB89D78249D5A1700052ABE /* UIImage+Vrbo.swift in Sources */,
+				ACB89D5F249D119400052ABE /* Venue.swift in Sources */,
+				ACB89D69249D161200052ABE /* Services.swift in Sources */,
+				ACB89D70249D2DBB00052ABE /* EventTableViewCell.swift in Sources */,
+				ACB89D74249D2FD800052ABE /* EventViewModel.swift in Sources */,
+				ACB89D6C249D1D1F00052ABE /* Date+Vrbo.swift in Sources */,
 				ACB89D33249D0F1C00052ABE /* AppDelegate.swift in Sources */,
+				ACB89D76249D536300052ABE /* Performer.swift in Sources */,
+				ACB89D64249D13DC00052ABE /* EventsService.swift in Sources */,
 				ACB89D35249D0F1C00052ABE /* SceneDelegate.swift in Sources */,
-				ACB89D37249D0F1C00052ABE /* MasterViewController.swift in Sources */,
-				ACB89D39249D0F1C00052ABE /* DetailViewController.swift in Sources */,
+				ACB89D37249D0F1C00052ABE /* EventsViewController.swift in Sources */,
+				ACB89D39249D0F1C00052ABE /* EventViewController.swift in Sources */,
+				ACB89D59249D10DD00052ABE /* Event.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,6 +577,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		ACB89D65249D142300052ABE /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.2.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		ACB89D66249D142300052ABE /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ACB89D65249D142300052ABE /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = ACB89D27249D0F1C00052ABE /* Project object */;
 }

@@ -12,7 +12,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UISplitViewControllerDe
 
 	var window: UIWindow?
 
-
 	func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
 		// Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
 		// If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
@@ -23,6 +22,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UISplitViewControllerDe
 		navigationController.topViewController?.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
 		navigationController.topViewController?.navigationItem.leftItemsSupplementBackButton = true
 		splitViewController.delegate = self
+
+		// Inject the services struct into the Events List view controller
+		if let eventsViewController = findEventsList(splitViewController.viewControllers) {
+			eventsViewController.eventsService = EventsService(services: Services())
+		}
+	}
+
+	func findEventsList(_ vcs: [UIViewController]) -> EventsViewController? {
+		return vcs.compactMap { (navc) -> EventsViewController? in
+			(navc as? UINavigationController)?.topViewController as? EventsViewController
+		}.first
 	}
 
 	func sceneDidDisconnect(_ scene: UIScene) {
@@ -57,7 +67,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UISplitViewControllerDe
 
 	func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController:UIViewController, onto primaryViewController:UIViewController) -> Bool {
 	    guard let secondaryAsNavController = secondaryViewController as? UINavigationController else { return false }
-	    guard let topAsDetailController = secondaryAsNavController.topViewController as? DetailViewController else { return false }
+	    guard let topAsDetailController = secondaryAsNavController.topViewController as? EventViewController else { return false }
 	    if topAsDetailController.detailItem == nil {
 	        // Return true to indicate that we have handled the collapse by doing nothing; the secondary controller will be discarded.
 	        return true
