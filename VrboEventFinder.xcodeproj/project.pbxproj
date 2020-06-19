@@ -1,0 +1,478 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		ACB89D33249D0F1C00052ABE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB89D32249D0F1C00052ABE /* AppDelegate.swift */; };
+		ACB89D35249D0F1C00052ABE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB89D34249D0F1C00052ABE /* SceneDelegate.swift */; };
+		ACB89D37249D0F1C00052ABE /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB89D36249D0F1C00052ABE /* MasterViewController.swift */; };
+		ACB89D39249D0F1C00052ABE /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB89D38249D0F1C00052ABE /* DetailViewController.swift */; };
+		ACB89D3C249D0F1D00052ABE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACB89D3A249D0F1D00052ABE /* Main.storyboard */; };
+		ACB89D3E249D0F1D00052ABE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACB89D3D249D0F1D00052ABE /* Assets.xcassets */; };
+		ACB89D41249D0F1E00052ABE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACB89D3F249D0F1E00052ABE /* LaunchScreen.storyboard */; };
+		ACB89D4C249D0F1E00052ABE /* VrboEventFinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB89D4B249D0F1E00052ABE /* VrboEventFinderTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		ACB89D48249D0F1E00052ABE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ACB89D27249D0F1C00052ABE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ACB89D2E249D0F1C00052ABE;
+			remoteInfo = VrboEventFinder;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		ACB89D2F249D0F1C00052ABE /* VrboEventFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VrboEventFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACB89D32249D0F1C00052ABE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		ACB89D34249D0F1C00052ABE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		ACB89D36249D0F1C00052ABE /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		ACB89D38249D0F1C00052ABE /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		ACB89D3B249D0F1D00052ABE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ACB89D3D249D0F1D00052ABE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ACB89D40249D0F1E00052ABE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		ACB89D42249D0F1E00052ABE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ACB89D47249D0F1E00052ABE /* VrboEventFinderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VrboEventFinderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACB89D4B249D0F1E00052ABE /* VrboEventFinderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VrboEventFinderTests.swift; sourceTree = "<group>"; };
+		ACB89D4D249D0F1E00052ABE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ACB89D2C249D0F1C00052ABE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACB89D44249D0F1E00052ABE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ACB89D26249D0F1C00052ABE = {
+			isa = PBXGroup;
+			children = (
+				ACB89D31249D0F1C00052ABE /* VrboEventFinder */,
+				ACB89D4A249D0F1E00052ABE /* VrboEventFinderTests */,
+				ACB89D30249D0F1C00052ABE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		ACB89D30249D0F1C00052ABE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ACB89D2F249D0F1C00052ABE /* VrboEventFinder.app */,
+				ACB89D47249D0F1E00052ABE /* VrboEventFinderTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ACB89D31249D0F1C00052ABE /* VrboEventFinder */ = {
+			isa = PBXGroup;
+			children = (
+				ACB89D32249D0F1C00052ABE /* AppDelegate.swift */,
+				ACB89D34249D0F1C00052ABE /* SceneDelegate.swift */,
+				ACB89D36249D0F1C00052ABE /* MasterViewController.swift */,
+				ACB89D38249D0F1C00052ABE /* DetailViewController.swift */,
+				ACB89D3A249D0F1D00052ABE /* Main.storyboard */,
+				ACB89D3D249D0F1D00052ABE /* Assets.xcassets */,
+				ACB89D3F249D0F1E00052ABE /* LaunchScreen.storyboard */,
+				ACB89D42249D0F1E00052ABE /* Info.plist */,
+			);
+			path = VrboEventFinder;
+			sourceTree = "<group>";
+		};
+		ACB89D4A249D0F1E00052ABE /* VrboEventFinderTests */ = {
+			isa = PBXGroup;
+			children = (
+				ACB89D4B249D0F1E00052ABE /* VrboEventFinderTests.swift */,
+				ACB89D4D249D0F1E00052ABE /* Info.plist */,
+			);
+			path = VrboEventFinderTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ACB89D2E249D0F1C00052ABE /* VrboEventFinder */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ACB89D50249D0F1F00052ABE /* Build configuration list for PBXNativeTarget "VrboEventFinder" */;
+			buildPhases = (
+				ACB89D2B249D0F1C00052ABE /* Sources */,
+				ACB89D2C249D0F1C00052ABE /* Frameworks */,
+				ACB89D2D249D0F1C00052ABE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VrboEventFinder;
+			productName = VrboEventFinder;
+			productReference = ACB89D2F249D0F1C00052ABE /* VrboEventFinder.app */;
+			productType = "com.apple.product-type.application";
+		};
+		ACB89D46249D0F1E00052ABE /* VrboEventFinderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ACB89D53249D0F1F00052ABE /* Build configuration list for PBXNativeTarget "VrboEventFinderTests" */;
+			buildPhases = (
+				ACB89D43249D0F1E00052ABE /* Sources */,
+				ACB89D44249D0F1E00052ABE /* Frameworks */,
+				ACB89D45249D0F1E00052ABE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ACB89D49249D0F1E00052ABE /* PBXTargetDependency */,
+			);
+			name = VrboEventFinderTests;
+			productName = VrboEventFinderTests;
+			productReference = ACB89D47249D0F1E00052ABE /* VrboEventFinderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ACB89D27249D0F1C00052ABE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1150;
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = Miguel;
+				TargetAttributes = {
+					ACB89D2E249D0F1C00052ABE = {
+						CreatedOnToolsVersion = 11.5;
+					};
+					ACB89D46249D0F1E00052ABE = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = ACB89D2E249D0F1C00052ABE;
+					};
+				};
+			};
+			buildConfigurationList = ACB89D2A249D0F1C00052ABE /* Build configuration list for PBXProject "VrboEventFinder" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ACB89D26249D0F1C00052ABE;
+			productRefGroup = ACB89D30249D0F1C00052ABE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ACB89D2E249D0F1C00052ABE /* VrboEventFinder */,
+				ACB89D46249D0F1E00052ABE /* VrboEventFinderTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ACB89D2D249D0F1C00052ABE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACB89D41249D0F1E00052ABE /* LaunchScreen.storyboard in Resources */,
+				ACB89D3E249D0F1D00052ABE /* Assets.xcassets in Resources */,
+				ACB89D3C249D0F1D00052ABE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACB89D45249D0F1E00052ABE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ACB89D2B249D0F1C00052ABE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACB89D33249D0F1C00052ABE /* AppDelegate.swift in Sources */,
+				ACB89D35249D0F1C00052ABE /* SceneDelegate.swift in Sources */,
+				ACB89D37249D0F1C00052ABE /* MasterViewController.swift in Sources */,
+				ACB89D39249D0F1C00052ABE /* DetailViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACB89D43249D0F1E00052ABE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACB89D4C249D0F1E00052ABE /* VrboEventFinderTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		ACB89D49249D0F1E00052ABE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ACB89D2E249D0F1C00052ABE /* VrboEventFinder */;
+			targetProxy = ACB89D48249D0F1E00052ABE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		ACB89D3A249D0F1D00052ABE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ACB89D3B249D0F1D00052ABE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		ACB89D3F249D0F1E00052ABE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ACB89D40249D0F1E00052ABE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		ACB89D4E249D0F1F00052ABE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		ACB89D4F249D0F1F00052ABE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		ACB89D51249D0F1F00052ABE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M35QBS2F76;
+				INFOPLIST_FILE = VrboEventFinder/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.miguelasensio.VrboEventFinder;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		ACB89D52249D0F1F00052ABE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M35QBS2F76;
+				INFOPLIST_FILE = VrboEventFinder/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.miguelasensio.VrboEventFinder;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		ACB89D54249D0F1F00052ABE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M35QBS2F76;
+				INFOPLIST_FILE = VrboEventFinderTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.miguelasensio.VrboEventFinderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VrboEventFinder.app/VrboEventFinder";
+			};
+			name = Debug;
+		};
+		ACB89D55249D0F1F00052ABE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M35QBS2F76;
+				INFOPLIST_FILE = VrboEventFinderTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.miguelasensio.VrboEventFinderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VrboEventFinder.app/VrboEventFinder";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ACB89D2A249D0F1C00052ABE /* Build configuration list for PBXProject "VrboEventFinder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ACB89D4E249D0F1F00052ABE /* Debug */,
+				ACB89D4F249D0F1F00052ABE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ACB89D50249D0F1F00052ABE /* Build configuration list for PBXNativeTarget "VrboEventFinder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ACB89D51249D0F1F00052ABE /* Debug */,
+				ACB89D52249D0F1F00052ABE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ACB89D53249D0F1F00052ABE /* Build configuration list for PBXNativeTarget "VrboEventFinderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ACB89D54249D0F1F00052ABE /* Debug */,
+				ACB89D55249D0F1F00052ABE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ACB89D27249D0F1C00052ABE /* Project object */;
+}
