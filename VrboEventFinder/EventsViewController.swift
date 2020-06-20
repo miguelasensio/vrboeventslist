@@ -8,8 +8,14 @@
 
 import UIKit
 
+protocol FavoritesDelegate {
+	func update(event: EventViewModel)
+}
+
 class EventsViewController: UIViewController {
 	var eventsService: EventsService?
+	var favoritesController: FavoritesController?
+
 	let searchBar = UISearchBar()
 	var timer: Timer?
 
@@ -30,6 +36,7 @@ class EventsViewController: UIViewController {
 		setupSearch()
 		updateEventsList(query: "")
 
+		setNeedsStatusBarAppearanceUpdate()
 	}
 
 	override func viewWillAppear(_ animated: Bool) {
@@ -41,6 +48,8 @@ class EventsViewController: UIViewController {
 
 		navigationController?.navigationBar.barTintColor = UIColor(named: "navBar")
 		navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+
+		navigationController?.navigationBar.barStyle = .black
 
 	}
 
@@ -62,25 +71,15 @@ class EventsViewController: UIViewController {
 			switch result {
 			case .success(let eventsResult):
 				self?.events = eventsResult.events.compactMap {
-					EventViewModel(model: $0)
+					EventViewModel(model: $0, favoritesController: self?.favoritesController)
 				}
 			case .failure:
-				// TODO: notify user something went wrong
-				break
+				// The UI already handles an empty data condition, so user will be aware that events listing is not available.
+				// TODO: But we should log an error here for diagnostics
+				self?.events = []
 			}
 		})
 	}
-
-	func addSpinner(to view: UIView) -> UIActivityIndicatorView {
-		let activitySpinner = UIActivityIndicatorView(style: .large)
-		view.addSubview(activitySpinner)
-		activitySpinner.translatesAutoresizingMaskIntoConstraints = false
-		activitySpinner.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-		activitySpinner.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-		activitySpinner.startAnimating()
-		return activitySpinner
-	}
-
 
 	// MARK: - Segues
 
@@ -90,8 +89,11 @@ class EventsViewController: UIViewController {
 		        let controller = (segue.destination as! UINavigationController).topViewController as! EventViewController
 		        controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
 		        controller.navigationItem.leftItemsSupplementBackButton = true
-				controller.event = events[indexPath.row]
+
+				controller.eventVM = events[indexPath.row]
 				controller.eventsService = eventsService
+				controller.favoritesController = favoritesController
+				controller.delegate = self
 
 				let backItem = UIBarButtonItem()
 				backItem.title = events[indexPath.row].name
@@ -99,7 +101,7 @@ class EventsViewController: UIViewController {
 
 				navigationController?.navigationBar.barTintColor = UIColor.white
 				navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.black]
-
+				navigationController?.navigationBar.barStyle = .default
 		    }
 		}
 	}
@@ -125,28 +127,16 @@ extension EventsViewController: UITableViewDelegate, UITableViewDataSource {
 	}
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		// TODO: Configure an empty cell to warn user something went wrong
 		guard let cell = tableView.dequeueReusableCell(withIdentifier: "event", for: indexPath) as? EventTableViewCell
-			else { return UITableViewCell() }
-
-		let eventVM = events[indexPath.row]
-		cell.name.text 		= eventVM.name
-		cell.location.text 	= eventVM.location
-		cell.schedule.text 	= eventVM.schedule
-
-		if let imageURL = eventVM.thumbnailFile {
-			eventsService?.fetchImage(imageURL) { result in
-				switch result {
-				case .success(let image):
-					DispatchQueue.main.async { //[weak self] in
-						cell.add(image)
-					}
-				case .failure:
-					// TODO: error handling
-					break
-				}
-			}
+		else {
+			let cell = UITableViewCell()
+			cell.textLabel?.text = "No data currently available for this event."
+			return cell
 		}
+
+		cell.favoritesController = favoritesController
+		cell.eventsService = eventsService
+		cell.eventVM = events[indexPath.row]
 
 		return cell
 	}
@@ -154,10 +144,6 @@ extension EventsViewController: UITableViewDelegate, UITableViewDataSource {
 	 func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
 		return events.isEmpty ? "No events available at this time" : ""
 	}
-}
-
-extension EventsViewController {
-	
 }
 
 extension EventsViewController: UISearchBarDelegate {
@@ -179,7 +165,7 @@ extension EventsViewController: UISearchBarDelegate {
 	func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
 		timer?.invalidate()
 
-		timer = Timer.scheduledTimer(withTimeInterval: App.keyStrokeDelay, repeats: false, block: { [weak self] _ in //(Timer) in
+		timer = Timer.scheduledTimer(withTimeInterval: App.keyStrokeDelay, repeats: false, block: { [weak self] _ in
 			print("\(#function):\t searchText = \(searchText)")
 			self?.updateEventsList(query: searchText)
 		})
@@ -187,15 +173,26 @@ extension EventsViewController: UISearchBarDelegate {
 
 	func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
 		timer?.invalidate()
+		searchBar.endEditing(true)
 	}
 }
 
-extension EventsViewController {
-	override var prefersStatusBarHidden: Bool {
-	  return true
-	}
+extension EventsViewController: FavoritesDelegate {
+	func update(event: EventViewModel) {
+		guard let eventIndex = events.firstIndex(where: {$0 == event}),
+			let cell = tableView.cellForRow(at: IndexPath(row: eventIndex, section: 0)) as? EventTableViewCell
+		else { return }
 
-	override var preferredStatusBarStyle: UIStatusBarStyle {
-		return .lightContent
+		cell.subviews.filter {
+			guard let view = $0 as? UIImageView, view.tag == App.favoriteIndicatorTag else { return false }
+			return true
+		}.forEach { (favorite) in
+			favorite.removeFromSuperview()
+		}
+
+		guard let eventVM = cell.eventVM else { return }
+		if eventVM.isFavorite {
+			cell.showFavorite(eventVM)
+		}
 	}
 }

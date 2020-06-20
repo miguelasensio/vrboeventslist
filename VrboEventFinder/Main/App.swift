@@ -18,4 +18,7 @@ struct App {
 	static let fromStringDateFormat = "YYYY-MM-dd'T'HH:mm:ss"
 
 	static let keyStrokeDelay = 1.0
+
+	static let favoritesList = "favoritesList"
+	static let favoriteIndicatorTag = 99
 }

@@ -26,6 +26,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UISplitViewControllerDe
 		// Inject the services struct into the Events List view controller
 		if let eventsViewController = findEventsList(splitViewController.viewControllers) {
 			eventsViewController.eventsService = EventsService(services: Services())
+			eventsViewController.favoritesController = FavoritesController()
 		}
 	}
 
@@ -66,9 +67,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UISplitViewControllerDe
 	// MARK: - Split view
 
 	func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController:UIViewController, onto primaryViewController:UIViewController) -> Bool {
-	    guard let secondaryAsNavController = secondaryViewController as? UINavigationController else { return false }
+		splitViewController.preferredDisplayMode = .primaryOverlay
+		guard let secondaryAsNavController = secondaryViewController as? UINavigationController else { return false }
 	    guard let topAsDetailController = secondaryAsNavController.topViewController as? EventViewController else { return false }
-	    if topAsDetailController.event == nil {
+	    if topAsDetailController.eventVM == nil {
 	        // Return true to indicate that we have handled the collapse by doing nothing; the secondary controller will be discarded.
 	        return true
 	    }

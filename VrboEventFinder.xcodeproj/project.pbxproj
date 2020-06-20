@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC797D59249E5F9E00B65920 /* EventDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC797D57249E5F9E00B65920 /* EventDetailTableViewCell.swift */; };
+		AC797D5A249E5F9E00B65920 /* EventDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC797D58249E5F9E00B65920 /* EventDetailTableViewCell.xib */; };
+		AC797D5D249E6FE300B65920 /* FavoritesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC797D5C249E6FE300B65920 /* FavoritesController.swift */; };
+		AC797D5F249E95DD00B65920 /* UISPlitViewController+Vrbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC797D5E249E95DD00B65920 /* UISPlitViewController+Vrbo.swift */; };
+		AC797D61249E976600B65920 /* UIViewController+Vrbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC797D60249E976600B65920 /* UIViewController+Vrbo.swift */; };
 		ACB89D33249D0F1C00052ABE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB89D32249D0F1C00052ABE /* AppDelegate.swift */; };
 		ACB89D35249D0F1C00052ABE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB89D34249D0F1C00052ABE /* SceneDelegate.swift */; };
 		ACB89D37249D0F1C00052ABE /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB89D36249D0F1C00052ABE /* EventsViewController.swift */; };
@@ -41,6 +46,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AC797D57249E5F9E00B65920 /* EventDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailTableViewCell.swift; sourceTree = "<group>"; };
+		AC797D58249E5F9E00B65920 /* EventDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventDetailTableViewCell.xib; sourceTree = "<group>"; };
+		AC797D5C249E6FE300B65920 /* FavoritesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesController.swift; sourceTree = "<group>"; };
+		AC797D5E249E95DD00B65920 /* UISPlitViewController+Vrbo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISPlitViewController+Vrbo.swift"; sourceTree = "<group>"; };
+		AC797D60249E976600B65920 /* UIViewController+Vrbo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Vrbo.swift"; sourceTree = "<group>"; };
 		ACB89D2F249D0F1C00052ABE /* VrboEventFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VrboEventFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACB89D32249D0F1C00052ABE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACB89D34249D0F1C00052ABE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +96,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AC797D5B249E6FCE00B65920 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AC797D5C249E6FE300B65920 /* FavoritesController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		ACB89D26249D0F1C00052ABE = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +125,7 @@
 		ACB89D31249D0F1C00052ABE /* VrboEventFinder */ = {
 			isa = PBXGroup;
 			children = (
+				AC797D5B249E6FCE00B65920 /* Controllers */,
 				ACB89D72249D2FBB00052ABE /* ViewModel */,
 				ACB89D6D249D2D9E00052ABE /* Views */,
 				ACB89D6A249D1D0A00052ABE /* Extensions */,
@@ -167,6 +186,8 @@
 			children = (
 				ACB89D6B249D1D1F00052ABE /* Date+Vrbo.swift */,
 				ACB89D77249D5A1700052ABE /* UIImage+Vrbo.swift */,
+				AC797D5E249E95DD00B65920 /* UISPlitViewController+Vrbo.swift */,
+				AC797D60249E976600B65920 /* UIViewController+Vrbo.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -176,6 +197,8 @@
 			children = (
 				ACB89D6E249D2DBB00052ABE /* EventTableViewCell.swift */,
 				ACB89D6F249D2DBB00052ABE /* EventTableViewCell.xib */,
+				AC797D57249E5F9E00B65920 /* EventDetailTableViewCell.swift */,
+				AC797D58249E5F9E00B65920 /* EventDetailTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -277,6 +300,7 @@
 			files = (
 				ACB89D71249D2DBB00052ABE /* EventTableViewCell.xib in Resources */,
 				ACB89D41249D0F1E00052ABE /* LaunchScreen.storyboard in Resources */,
+				AC797D5A249E5F9E00B65920 /* EventDetailTableViewCell.xib in Resources */,
 				ACB89D3E249D0F1D00052ABE /* Assets.xcassets in Resources */,
 				ACB89D3C249D0F1D00052ABE /* Main.storyboard in Resources */,
 			);
@@ -297,16 +321,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACB89D61249D132B00052ABE /* App.swift in Sources */,
+				AC797D59249E5F9E00B65920 /* EventDetailTableViewCell.swift in Sources */,
 				ACB89D5B249D110500052ABE /* Events.swift in Sources */,
+				AC797D5D249E6FE300B65920 /* FavoritesController.swift in Sources */,
 				ACB89D78249D5A1700052ABE /* UIImage+Vrbo.swift in Sources */,
 				ACB89D5F249D119400052ABE /* Venue.swift in Sources */,
 				ACB89D69249D161200052ABE /* Services.swift in Sources */,
 				ACB89D70249D2DBB00052ABE /* EventTableViewCell.swift in Sources */,
 				ACB89D74249D2FD800052ABE /* EventViewModel.swift in Sources */,
 				ACB89D6C249D1D1F00052ABE /* Date+Vrbo.swift in Sources */,
+				AC797D5F249E95DD00B65920 /* UISPlitViewController+Vrbo.swift in Sources */,
 				ACB89D33249D0F1C00052ABE /* AppDelegate.swift in Sources */,
 				ACB89D76249D536300052ABE /* Performer.swift in Sources */,
 				ACB89D64249D13DC00052ABE /* EventsService.swift in Sources */,
+				AC797D61249E976600B65920 /* UIViewController+Vrbo.swift in Sources */,
 				ACB89D35249D0F1C00052ABE /* SceneDelegate.swift in Sources */,
 				ACB89D37249D0F1C00052ABE /* EventsViewController.swift in Sources */,
 				ACB89D39249D0F1C00052ABE /* EventViewController.swift in Sources */,

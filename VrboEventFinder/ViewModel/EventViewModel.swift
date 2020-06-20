@@ -9,8 +9,9 @@
 import Foundation
 import UIKit
 
-struct EventViewModel {
+struct EventViewModel: Equatable {
 	let model: Event
+	let favoritesController: FavoritesController?
 
 	var name: String {
 		model.title
@@ -35,5 +36,21 @@ struct EventViewModel {
 
 	var largePhotoFile: String? {
 		model.performers?.first?.images?["huge"] ?? thumbnailFile
+	}
+
+	var favoriteColor: UIColor {
+		isFavorite ? UIColor(named: "favorited")! : UIColor(named: "favoriteNot")!
+	}
+
+	var favoriteImage: UIImage {
+		UIImage(named: "heart")!
+	}
+
+	var isFavorite: Bool {
+		favoritesController?.find(id: model.id) ?? false
+	}
+
+	static func == (lhs: EventViewModel, rhs: EventViewModel) -> Bool {
+		lhs.model.id == rhs.model.id
 	}
 }

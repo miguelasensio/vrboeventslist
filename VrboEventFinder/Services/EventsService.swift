@@ -37,7 +37,6 @@ class EventsService {
 			return
 		}
 
-		print("\(#function): request = \(url)")
 		AF.request(url)
 			.validate(statusCode: 200..<300)
 			.responseJSON { response in
@@ -60,7 +59,6 @@ class EventsService {
 			return
 		}
 
-		print("\(#function): image fetch = \(url)")
 		AF.request(url)
 			.validate(statusCode: 200..<300)
 			.responseData { response in
