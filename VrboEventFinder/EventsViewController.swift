@@ -8,10 +8,12 @@
 
 import UIKit
 
-class EventsViewController: UITableViewController {
+class EventsViewController: UIViewController {
 	var eventsService: EventsService?
 	let searchBar = UISearchBar()
 	var timer: Timer?
+
+	@IBOutlet weak var tableView: UITableView!
 
 	var events = [EventViewModel]() {
 		didSet {
@@ -27,11 +29,28 @@ class EventsViewController: UITableViewController {
 		setupTableView()
 		setupSearch()
 		updateEventsList(query: "")
+
 	}
 
 	override func viewWillAppear(_ animated: Bool) {
-		clearsSelectionOnViewWillAppear = splitViewController!.isCollapsed
 		super.viewWillAppear(animated)
+
+		if let indexPath = tableView.indexPathForSelectedRow {
+			tableView.deselectRow(at: indexPath, animated: false)
+		}
+
+		navigationController?.navigationBar.barTintColor = UIColor(named: "navBar")
+		navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+
+	}
+
+	func setupTableView() {
+		tableView.delegate = self
+		tableView.dataSource = self
+		tableView.register(UINib(nibName: "EventTableViewCell", bundle: nil), forCellReuseIdentifier: "event")
+		tableView.rowHeight = UITableView.automaticDimension
+		tableView.estimatedRowHeight = 44.0
+		tableView.tableFooterView = UIView()
 	}
 
 	func updateEventsList(query: String) {
@@ -71,28 +90,41 @@ class EventsViewController: UITableViewController {
 		        let controller = (segue.destination as! UINavigationController).topViewController as! EventViewController
 		        controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
 		        controller.navigationItem.leftItemsSupplementBackButton = true
-		        eventViewController = controller
+				controller.event = events[indexPath.row]
+				controller.eventsService = eventsService
+
+				let backItem = UIBarButtonItem()
+				backItem.title = events[indexPath.row].name
+				navigationItem.backBarButtonItem = backItem
+
+				navigationController?.navigationBar.barTintColor = UIColor.white
+				navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.black]
+
 		    }
 		}
 	}
 }
 
-extension EventsViewController {
-	func setupTableView() {
-		tableView.register(UINib(nibName: "EventTableViewCell", bundle: nil), forCellReuseIdentifier: "event")
-		tableView.rowHeight = UITableView.automaticDimension
-		tableView.estimatedRowHeight = 44.0
+extension EventsViewController: UITableViewDelegate, UITableViewDataSource {
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		print("\(#function) \(indexPath)")
+		performSegue(withIdentifier: "showDetail", sender: indexPath)
 	}
 
-	override func numberOfSections(in tableView: UITableView) -> Int {
+	override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+		print("\(#function)")
+		return true
+	}
+
+	func numberOfSections(in tableView: UITableView) -> Int {
 		return 1
 	}
 
-	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return events.count
 	}
 
-	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		// TODO: Configure an empty cell to warn user something went wrong
 		guard let cell = tableView.dequeueReusableCell(withIdentifier: "event", for: indexPath) as? EventTableViewCell
 			else { return UITableViewCell() }
@@ -106,7 +138,7 @@ extension EventsViewController {
 			eventsService?.fetchImage(imageURL) { result in
 				switch result {
 				case .success(let image):
-					DispatchQueue.main.async { [weak self] in
+					DispatchQueue.main.async { //[weak self] in
 						cell.add(image)
 					}
 				case .failure:
@@ -118,6 +150,14 @@ extension EventsViewController {
 
 		return cell
 	}
+
+	 func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+		return events.isEmpty ? "No events available at this time" : ""
+	}
+}
+
+extension EventsViewController {
+	
 }
 
 extension EventsViewController: UISearchBarDelegate {

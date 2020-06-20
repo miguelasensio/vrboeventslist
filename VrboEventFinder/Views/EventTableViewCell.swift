@@ -15,16 +15,12 @@ class EventTableViewCell: UITableViewCell {
 	
 	@IBOutlet weak var outerStackView: UIStackView!
 
-	override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
 	func add(_ image: UIImage) {
 		let imageView = UIImageView.init(frame: CGRect.init(x: 0.0, y: 0.0, width: 75.0, height: 75.0))
 		imageView.clipsToBounds = true
 		imageView.setContentHuggingPriority(.defaultHigh, for: .horizontal)
-		imageView.image = image.resizeImage(to: CGSize.init(width: 75.0, height: 75.0))
+		imageView.image = image.resizeImage(to: 75.0)
+		imageView.layer.cornerRadius = 8.0
 		outerStackView.insertArrangedSubview(imageView, at: 0)
 
 		outerStackView.spacing = 10

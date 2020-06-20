@@ -32,4 +32,8 @@ struct EventViewModel {
 	var thumbnailFile: String? {
 		model.performers?.first?.image
 	}
+
+	var largePhotoFile: String? {
+		model.performers?.first?.images?["huge"] ?? thumbnailFile
+	}
 }
